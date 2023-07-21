@@ -1,0 +1,14 @@
+{
+    "interactions": {
+        "boop": {
+            "count": 1043,
+            "interaction_name": "Boops"
+        },
+        "headpat": {
+            "count": 217,
+            "interaction_name": "Headpats"
+        }
+    },
+    "receiving_port": 9001,
+    "sending_port": 9000
+}
