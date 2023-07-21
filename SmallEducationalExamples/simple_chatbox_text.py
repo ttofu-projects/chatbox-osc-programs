@@ -1,7 +1,7 @@
 from pythonosc import udp_client
 import time
 
-text = "hmm" + "\v" * 141
+text = "YOUR TEXT HERE"
 
 
 class ChatboxClient:

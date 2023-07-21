@@ -2,11 +2,11 @@
     "interactions": {
         "boop": {
             "count": 1043,
-            "interaction_name": "Boops"
+            "text_format": "Boops: {count}"
         },
         "headpat": {
             "count": 217,
-            "interaction_name": "Headpats"
+            "text_format": "Headpats: {count}"
         }
     },
     "receiving_port": 9001,

@@ -1,1 +1,0 @@
-CreateObject("Wscript.Shell").Run "silent_run.bat",0,True

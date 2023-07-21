@@ -13,12 +13,12 @@ config_template = {
         "boop": {  # Avatar parameter name the activation of which needs to be counted.
             # If the parameter type is float then the amount of times it has reached 1.0 gets counted
             "count": 0,  # The saved count amount
-            "interaction_name": "Boops"  # What will be displayed in the chatbox.
+            "text_format": "Boops: {count}"  # What will be displayed in the chatbox.
             # In this case, it will show "Boops: 1", "Boops: 2", etc
         },
         "headpat": {
             "count": 0,
-            "interaction_name": "Headpats"
+            "text_format": "Headpats: {count}"
         }
     },
     "receiving_port": 9001,
@@ -57,7 +57,7 @@ def interacted(name):
 
     interaction = interactions[name]
     interaction["count"] += 1
-    text = interaction["interaction_name"] + ": " + str(interaction["count"])
+    text = interaction["text_format"].format(count=interaction["count"])
     client.send(text)
     interactions[name] = interaction
     config["interactions"] = interactions
@@ -74,7 +74,7 @@ class ChatboxClient:
         self.last_time = time.time()
 
     def send(self, text):
-        if time.time() - self.last_time < 1.5:
+        if time.time() - self.last_time < 1.5:  # Chatbox cooldown
             return
         self.client.send_message("/chatbox/input", [text, True])
         log("[Chatbox client] Sent a message: \"" + text + "\"")
