@@ -9,6 +9,7 @@ This script counts, saves and displays in the chatbox the number of times an ava
 (being touched/interacted with/etc).
 
 ### How to use
+0) Install the requirements with `pip3 install -r requirements.txt`
 1) Change the `config.json` file and put the avatar parameters the changes of which you want to count 
 and the format of text that displays in the chatbox upon the interaction. 
 2) Launch `interaction_counter.py`
