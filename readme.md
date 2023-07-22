@@ -65,8 +65,8 @@ gets changed and I haven't found a reliable way to determine what counts as an a
 ### Example
 Imagine there are 2 interactions that need to be counted: boops and headpats.  
 The avatar has 2 contact receivers which change 2 boolean parameters inside the animation controller:  
-![image](readme_images/contact_receiver_1.png)
-![image](readme_images/contact_receiver_2.png)
+![image](.readme_images/contact_receiver_1.png)
+![image](.readme_images/contact_receiver_2.png)
 
 The `config.json` file for these parameter names can look like this:
 ```
