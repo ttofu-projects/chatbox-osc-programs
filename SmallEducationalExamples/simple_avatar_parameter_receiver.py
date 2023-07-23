@@ -1,8 +1,7 @@
-from pythonosc import udp_client
+import psutil
 from pythonosc.dispatcher import Dispatcher
 from pythonosc.osc_server import BlockingOSCUDPServer
 import time
-import psutil
 
 avatar_parameters_to_track = ["parameter_a", "parameter_b"]
 
@@ -27,6 +26,7 @@ def kill_interfering_process(port):
         return
     psutil.Process(pid).kill()
     print("[Interfering process killer] Interfering process is found and killed")
+    time.sleep(0.5)
     return
 
 
@@ -45,7 +45,6 @@ class OSCServer:
         except OSError:
             print("[OSC server] The socket is already in use, attempting to kill the interfering process")
             kill_interfering_process(port)
-            time.sleep(0.5)  # Safety wait
             self.server = BlockingOSCUDPServer(("127.0.0.1", port), self.dispatcher)
         print("[OSC server] Server successfully created with port " + str(port))
 
