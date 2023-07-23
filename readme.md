@@ -12,7 +12,7 @@ This script counts, saves and displays in the chatbox the number of times an ava
 
 ### How to set up
 
-1) [Install python](https://www.python.org/downloads/)
+1) [Install python](https://www.python.org/downloads/) and reboot your PC for the installation to finish.
 2) Run `setup.bat`
 
 This will install all the requirements and launch a 
