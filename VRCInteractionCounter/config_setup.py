@@ -20,6 +20,8 @@ class OSCServer:
         self.busy = False
 
     def osc_parameter_change(self, adress, *args):
+        if "/parameters/" not in adress:
+            return
         param_name = adress.split("/parameters/")[1]
         if (not isinstance(args[0], bool)) or (param_name in parameter_blacklist) or self.busy:
             return
