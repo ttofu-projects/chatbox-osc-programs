@@ -22,9 +22,11 @@ class OSCServer:
     def osc_parameter_change(self, adress, *args):
         if "/parameters/" not in adress:
             return
+
         param_name = adress.split("/parameters/")[1]
         if (not isinstance(args[0], bool)) or (param_name in parameter_blacklist) or self.busy:
             return
+
         self.busy = True
         parameter_blacklist.append(param_name)
         if input("Change in boolean parameter \"" + adress.split("/parameters/")[1] +
